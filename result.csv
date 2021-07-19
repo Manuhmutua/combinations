@@ -1,0 +1,52 @@
+team_name_home,team_name_away,team_home_score,team_away_score,0
+Italy,England,1,1,1
+England,Denmark,2,1,0
+Italy,Spain,1,1,1
+Ukraine,England,0,4,2
+Czech Republic,Denmark,1,2,2
+Belgium,Italy,1,2,2
+Switzerland,Spain,1,1,1
+Sweden,Ukraine,1,2,2
+England,Germany,2,0,0
+France,Switzerland,3,3,1
+Croatia,Spain,3,5,2
+Belgium,Portugal,1,0,0
+Netherlands,Czech Republic,0,2,2
+Italy,Austria,2,1,0
+Wales,Denmark,0,4,2
+Portugal,France,2,2,1
+Germany,Hungary,2,2,1
+Sweden,Poland,3,2,0
+Slovakia,Spain,0,5,2
+Croatia,Scotland,3,1,0
+Czech Republic,England,0,1,2
+Finland,Belgium,0,2,2
+Russia,Denmark,1,4,2
+Ukraine,Austria,0,1,2
+North Macedonia,Netherlands,0,3,2
+Italy,Wales,1,0,0
+Switzerland,Turkey,3,1,0
+Spain,Poland,1,1,1
+Portugal,Germany,2,4,2
+Hungary,France,1,1,1
+England,Scotland,0,0,1
+Croatia,Czech Republic,1,1,1
+Sweden,Slovakia,1,0,0
+Netherlands,Austria,2,0,0
+Denmark,Belgium,1,2,2
+Ukraine,North Macedonia,2,1,0
+Italy,Switzerland,3,0,0
+Turkey,Wales,0,2,2
+Finland,Russia,0,1,2
+France,Germany,1,0,0
+Hungary,Portugal,0,3,2
+Spain,Sweden,0,0,1
+Poland,Slovakia,1,2,2
+Scotland,Czech Republic,0,2,2
+Netherlands,Ukraine,3,2,0
+Austria,North Macedonia,3,1,0
+England,Croatia,1,0,0
+Belgium,Russia,3,0,0
+Denmark,Finland,0,1,2
+Wales,Switzerland,1,1,1
+Turkey,Italy,0,3,2
