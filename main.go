@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"log"
-	// "math"
+	"math"
 	"os"
 	"strings"
 )
@@ -60,7 +60,7 @@ func main() {
 	fmt.Printf("iterable = %s, r = %d", "[]int{1, 2, 3, 4, 5, 6}", 3)
 	fmt.Println()
 
-	combinations([]int{1, 2}, 9)
+	combinations(6)
 
 }
 
@@ -88,44 +88,72 @@ func trimString(s string) string {
 	return res1
 }
 
-func combinations(iterable []int, r int) {
-	pool := iterable
-	n := len(pool)
+func combinations(r int) {
+	totalSlips := math.Pow(3, float64(r))
 
-	if r > n {
-		return
-	}
+	fmt.Println(int(totalSlips) / r)
 
-	indices := make([]int, r)
-	for i := range indices {
-		indices[i] = i
-	}
+	var results [][]string
 
-	result := make([]int, r)
-	for i, el := range indices {
-		result[i] = pool[el]
-	}
+	var gameOne []string
+	var gameTwo []string
 
-	fmt.Println(result)
-
-	for {
-		i := r - 1
-		for ; i >= 0 && indices[i] == i+n-r; i -= 1 {
+	for i := 0; i < r; i++ {
+		if i == 0 {
+			b := []string{"1", "X", "2"}
+			for i := 0; i < int(totalSlips)/3; i++ {
+				gameOne = append(gameOne, b...)
+			}
+		}
+		if i == 1 {
+			b := []string{"1", "X", "2", "X", "1", "1", "2", "2", "X"}
+			for i := 0; i < int(totalSlips)/9; i++ {
+				gameTwo = append(gameTwo, b...)
+			}
 		}
 
-		if i < 0 {
-			return
-		}
+		var games []string
 
-		indices[i] += 1
-		for j := i + 1; j < r; j += 1 {
-			indices[j] = indices[j-1] + 1
-		}
+		if i >= 2 {
 
-		for ; i < len(indices); i += 1 {
-			result[i] = pool[indices[i]]
-		}
-		fmt.Println(result)
+			var pow = []string{"1", "X", "2"}
 
+			for _, v := range pow {
+				position := (i + 1)
+				// 	// fmt.Println(position)
+				s := math.Pow(3, float64(position))
+				iterations := (s / 3)
+				// 	fmt.Println(iterations)
+
+				var game []string
+				for i := 0; i < int(iterations); i++ {
+					// fmt.Println("**********", v)
+					game = append(game, v)
+				}
+				// fmt.Println(game)
+				games = append(games, game...)
+			}
+			
+
+			if int(totalSlips) > len(games) {
+				// fmt.Println(int(totalSlips) / len(games))
+				var g []string
+				for i := 0; i < int(totalSlips)/len(games); i++ {
+					g = append(g, games...)
+				}
+				// fmt.Println(g)
+				results = append(results, g)
+			}
+
+		}
 	}
+
+	// fmt.Println(gameOne)
+	results = append(results, gameOne)
+	// fmt.Println(gameTwo)
+	results = append(results, gameTwo)
+
+	fmt.Println(results)
+
+	writeFile("combinations.csv", results)
 }
